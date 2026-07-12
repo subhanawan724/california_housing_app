@@ -1,8 +1,12 @@
 import streamlit as st
 import joblib
 import numpy as np
+from pathlib import Path
 
-model = joblib.load("california_house_price_model.pkl")
+BASE_DIR = Path(__file__).parent
+model = joblib.load(BASE_DIR / "california_house_price_model.pkl")
+
+
 
 st.set_page_config(
     page_title="California House Price Predictor",
